@@ -1,0 +1,11 @@
+
+<div class="todo-form-main">
+  <form #form="ngForm" [formGroup]="todoForm" (ngSubmit)="todoForm.valid && handleSubmit()">
+      <mat-form-field>
+        <mat-label>Todo List Item</mat-label>
+        <input matInput placeholder="E.g. Send Email" name="name" formControlName="name">
+      </mat-form-field>
+      
+      <button mat-raised-button color="primary">Add Todo</button>
+  </form>
+</div>

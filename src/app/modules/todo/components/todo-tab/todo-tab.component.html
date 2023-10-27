@@ -1,0 +1,23 @@
+
+<div class="todo-tab-main">
+  <div class="todo-item">
+    <span class="todo-name"
+      [class.line-through]="todo.status == statusEnum.Complete"
+      (click)="edit.emit(todo)">{{ todo.name }}
+    </span>
+
+    <div class="todo-actions">
+      <button mat-mini-fab color="primary" aria-label="Complete" (click)="status.emit(todo)">
+        <mat-icon>done</mat-icon>
+      </button>
+
+      <button mat-mini-fab color="warn" aria-label="Delete" (click)="remove.emit(todo)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <p class="todo-item" *ngIf="noTodosFound">
+    {{ noTodosCaption }}
+  </p>
+</div>

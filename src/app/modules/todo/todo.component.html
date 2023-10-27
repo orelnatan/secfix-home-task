@@ -1,0 +1,13 @@
+<div class="todo-main">
+  <div class="todo-form-container">
+    <todo-form (onSubmit)="addNewTodo($event)"></todo-form>
+  </div>
+
+  <div class="tabs-navbar-container">
+    <tabs-navbar [todos]="(allTodos$ | async)!"
+      (remove)="removeTodo($event)"
+      (status)="changeTodoStatus($event)"
+      (edit)="changeTodoName($event)">
+    </tabs-navbar>
+  </div>
+</div>
