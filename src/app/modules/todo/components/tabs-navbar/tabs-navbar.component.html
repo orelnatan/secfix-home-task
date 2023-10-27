@@ -2,36 +2,42 @@
 <div class="tabs-navbar-main">
   <mat-tab-group>
     <mat-tab label="All">
-      <todo-tab *ngFor="let todo of todos | todos"
+      <todo-tab *ngFor="let todo of todosList | todos"
         [todo]="todo"
-        [noTodosFound]="(todos | todos)?.length === 0"
-        [noTodosCaption]="'No todos'"
         (remove)="remove.emit($event)"
         (status)="status.emit($event)"
         (edit)="openEditDialog($event)">
       </todo-tab>
-    </mat-tab>
 
+      <p *ngIf="(todosList | todos).length === 0">
+        No todos
+      </p>
+    </mat-tab>
+ 
     <mat-tab label="In Progress">
-      <todo-tab *ngFor="let todo of todos | todos: statusEnum.InProgress"
+      <todo-tab *ngFor="let todo of (todosList | todos: statusEnum.InProgress)"
         [todo]="todo"
-        [noTodosFound]="(todos | todos : statusEnum.InProgress)?.length === 0"
-        [noTodosCaption]="'No todos in progress'"
         (remove)="remove.emit($event)"
         (status)="status.emit($event)"
         (edit)="openEditDialog($event)">
       </todo-tab>
+
+      <p *ngIf="(todosList | todos : statusEnum.InProgress).length === 0">
+        No todos in progress
+      </p>
     </mat-tab>
 
     <mat-tab label="Completed">
-      <todo-tab *ngFor="let todo of todos | todos: statusEnum.Complete"
+      <todo-tab *ngFor="let todo of todosList | todos: statusEnum.Complete"
         [todo]="todo"
-        [noTodosFound]="(todos | todos : statusEnum.Complete)?.length === 0"
-        [noTodosCaption]="'No completed todos'"
         (remove)="remove.emit($event)"
         (status)="status.emit($event)"
         (edit)="openEditDialog($event)">
       </todo-tab>
+
+      <p *ngIf="(todosList | todos : statusEnum.Complete).length === 0">
+        No completed todos
+      </p>
     </mat-tab>
   </mat-tab-group>
 </div>

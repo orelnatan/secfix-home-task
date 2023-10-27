@@ -10,7 +10,7 @@ import { EditTodoDialogComponent } from '../edit-todo-dialog';
   styleUrls: ['./tabs-navbar.component.scss']
 })
 export class TabsNavbarComponent {
-  @Input() todos: Todo[] = [];
+  @Input() todosList: Todo[] = [];
 
   @Output() remove: EventEmitter<Todo> = new EventEmitter();
   @Output() status: EventEmitter<Todo> = new EventEmitter();
