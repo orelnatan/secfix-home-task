@@ -3,7 +3,11 @@
   display: flex;
   justify-content: center;
   
-  button {
-    margin: 0px 25px;
+  mat-radio-group {
+    padding: 0px 25px;
+  }
+
+  mat-radio-button {
+    padding: 0px 5px;
   }
 }

@@ -1,15 +1,11 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { StoreModule } from '@ngrx/store';
-import { EffectsModule } from '@ngrx/effects';
-import { TodoEffects } from './modules/store/todo/todo.effects';
-import { reducer, TODO_FEATURE_KEY } from './modules/store/todo/todo.reducer';
+import { BrowserModule } from '@angular/platform-browser';
 
+import { TodoStoreModule } from './modules/store/store.module';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +16,8 @@ import { reducer, TODO_FEATURE_KEY } from './modules/store/todo/todo.reducer';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    StoreModule.forRoot(reducer),
-    EffectsModule.forRoot(),
-    StoreModule.forFeature(TODO_FEATURE_KEY, reducer),
-    EffectsModule.forFeature([TodoEffects]),
+    TodoStoreModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

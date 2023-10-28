@@ -1,9 +1,9 @@
 
-<div class="todo-tab-main">
+<div class="todo-item-main">
   <div class="todo-item">
     <span class="todo-name"
       [class.line-through]="todo.status == statusEnum.Complete"
-      (click)="edit.emit(todo)">{{ todo.name }}
+      (click)="edit.emit(todo)">{{ todo.name }} - {{ todo.priority }}
     </span>
 
     <div class="todo-actions">

@@ -11,7 +11,7 @@ export const getTodosFailure = createFailureAction(getTodos);
 
 export const addTodo = createAction(
   '[ToDo] Add ToDo Item',
-  props<{ name: string }>()
+  props<{ todo: Todo }>()
   );
 
 export const changeTodoName = createAction(

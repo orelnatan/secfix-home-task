@@ -25,9 +25,7 @@ export class TodoComponent implements OnInit {
   }
   
   addNewTodo(todo: Todo): void {    
-    this.store.dispatch(addTodo({
-      name: todo.name
-    }))
+    this.store.dispatch(addTodo({ todo }))
   }
 
   changeTodoName(todo: Todo) {

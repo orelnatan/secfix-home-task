@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Todo } from 'src/app/modules/store/todo/todo.reducer';
+import { PriorityType, Todo } from 'src/app/modules/store/todo/todo.reducer';
 
 @Component({
   selector: 'todo-form',
@@ -10,8 +10,11 @@ import { Todo } from 'src/app/modules/store/todo/todo.reducer';
 export class TodoFormComponent {
   @Output() onSubmit: EventEmitter<Todo> = new EventEmitter();
 
+  priorityEnum = PriorityType;
+
   todoForm: FormGroup = this.formBuilder.group({
     name: new FormControl(null, [Validators.required]),
+    priority: new FormControl(PriorityType.Low),
   });  
 
   constructor(
@@ -20,8 +23,8 @@ export class TodoFormComponent {
 
   handleSubmit(): void {
     this.onSubmit.emit({ 
-      name: this.todoForm.controls['name'].value
+      name: this.todoForm.controls['name'].value,
+      priority: this.todoForm.controls['priority'].value,
     } as Todo)
   }
-
 }

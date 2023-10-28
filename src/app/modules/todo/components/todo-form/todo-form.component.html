@@ -1,11 +1,19 @@
 
 <div class="todo-form-main">
   <form #form="ngForm" [formGroup]="todoForm" (ngSubmit)="todoForm.valid && handleSubmit()">
+    <div class="form-controls">
       <mat-form-field>
         <mat-label>Todo List Item</mat-label>
         <input matInput placeholder="E.g. Send Email" name="name" formControlName="name">
       </mat-form-field>
+   
+      <mat-radio-group aria-label="Select priority level" name="priority" formControlName="priority">
+        <mat-radio-button [value]="priorityEnum.Low">{{ priorityEnum.Low }}</mat-radio-button>
+        <mat-radio-button [value]="priorityEnum.Medium">{{ priorityEnum.Medium }}</mat-radio-button>
+        <mat-radio-button [value]="priorityEnum.High">{{ priorityEnum.High }}</mat-radio-button>
+      </mat-radio-group>
+    </div>
       
-      <button mat-raised-button color="primary">Add Todo</button>
+    <button mat-raised-button color="primary">Add Todo</button>
   </form>
 </div>

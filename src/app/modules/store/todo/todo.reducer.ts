@@ -1,6 +1,6 @@
 import { Action, createReducer, on } from '@ngrx/store';
 
-import { changeTodoName, toggleTodoStatus, generateNewTodo, removeTodo } from './utils';
+import { changeTodoName, toggleTodoStatus, generateNewTodo, removeTodo, sortByPriority } from './utils';
 
 import * as actions from './todo.actions';
 
@@ -21,6 +21,7 @@ export interface Todo {
   id: number;
   name: string;
   status: TodoStatus;
+  priority?: PriorityType
 }
 
 export interface TodoState {
@@ -35,11 +36,13 @@ const todoReducer = createReducer(
     initialState,
     on(actions.getTodosSuccess, (state, { todoList }) => ({
       ...state,
-      todoList,
+      todoList: sortByPriority(todoList),
     })),
-    on(actions.addTodo, (state, { name }) => ({
+    on(actions.addTodo, (state, { todo }) => ({
       ...state,
-      todoList: [...state.todoList, generateNewTodo(state.todoList, name)], 
+      todoList: sortByPriority(
+        [...state.todoList, generateNewTodo(state.todoList, todo)]
+      ), 
     })),
     on(actions.removeTodo, (state, { todo }) => ({
       ...state,

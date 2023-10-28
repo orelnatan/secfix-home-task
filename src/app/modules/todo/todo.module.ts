@@ -2,12 +2,14 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list'; 
 import { MatButtonModule } from '@angular/material/button'; 
 import { MatIconModule } from '@angular/material/icon';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule } from '@angular/material/dialog';
+
 import { TodoRoutingModule } from './todo-routing.module';
 
 import { TodosPipe } from './pipes';
@@ -17,7 +19,7 @@ import {
   EditTodoDialogComponent,
   TabsNavbarComponent,
   TodoFormComponent, 
-  TodoTabComponent
+  TodoItemComponent
 } from './components';
 
 @NgModule({
@@ -28,7 +30,7 @@ import {
     TodosPipe,
     TodoFormComponent,
     TabsNavbarComponent,
-    TodoTabComponent
+    TodoItemComponent
   ],
   imports: [
     CommonModule,
@@ -40,10 +42,10 @@ import {
     MatIconModule,
     MatFormFieldModule,
     MatDialogModule,
+    MatRadioModule,
     FormsModule,
-    ReactiveFormsModule.withConfig({
-      warnOnNgModelWithFormControl: 'never'
-    })
+    ReactiveFormsModule,
+    
   ]
 })
 export class TodoModule { }

@@ -2,12 +2,12 @@
 <div class="tabs-navbar-main">
   <mat-tab-group>
     <mat-tab label="All">
-      <todo-tab *ngFor="let todo of todosList | todos"
+      <todo-item *ngFor="let todo of todosList | todos"
         [todo]="todo"
         (remove)="remove.emit($event)"
         (status)="status.emit($event)"
         (edit)="openEditDialog($event)">
-      </todo-tab>
+      </todo-item>
 
       <p *ngIf="(todosList | todos).length === 0">
         No todos
@@ -15,12 +15,12 @@
     </mat-tab>
  
     <mat-tab label="In Progress">
-      <todo-tab *ngFor="let todo of (todosList | todos: statusEnum.InProgress)"
+      <todo-item *ngFor="let todo of (todosList | todos: statusEnum.InProgress)"
         [todo]="todo"
         (remove)="remove.emit($event)"
         (status)="status.emit($event)"
         (edit)="openEditDialog($event)">
-      </todo-tab>
+      </todo-item>
 
       <p *ngIf="(todosList | todos : statusEnum.InProgress).length === 0">
         No todos in progress
@@ -28,12 +28,12 @@
     </mat-tab>
 
     <mat-tab label="Completed">
-      <todo-tab *ngFor="let todo of todosList | todos: statusEnum.Complete"
+      <todo-item *ngFor="let todo of todosList | todos: statusEnum.Complete"
         [todo]="todo"
         (remove)="remove.emit($event)"
         (status)="status.emit($event)"
         (edit)="openEditDialog($event)">
-      </todo-tab>
+      </todo-item>
 
       <p *ngIf="(todosList | todos : statusEnum.Complete).length === 0">
         No completed todos

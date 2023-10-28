@@ -3,11 +3,11 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Todo, TodoStatus } from '../../../store/todo/todo.reducer';
 
 @Component({
-  selector: 'todo-tab',
-  templateUrl: './todo-tab.component.html',
-  styleUrls: ['./todo-tab.component.scss']
+  selector: 'todo-item',
+  templateUrl: './todo-item.component.html',
+  styleUrls: ['./todo-item.component.scss']
 })
-export class TodoTabComponent {
+export class TodoItemComponent {
   @Input() todo: Todo = {} as Todo;
 
   @Output() remove: EventEmitter<Todo> = new EventEmitter();
