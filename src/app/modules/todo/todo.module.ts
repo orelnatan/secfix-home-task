@@ -1,8 +1,8 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list'; 
 import { MatButtonModule } from '@angular/material/button'; 
@@ -23,7 +23,6 @@ import {
 } from './components';
 
 @NgModule({
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   declarations: [
     TodoComponent,
     EditTodoDialogComponent,
@@ -45,7 +44,7 @@ import {
     MatRadioModule,
     FormsModule,
     ReactiveFormsModule,
-    
+
   ]
 })
 export class TodoModule { }

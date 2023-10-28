@@ -28,15 +28,15 @@ export class TodoComponent implements OnInit {
     this.store.dispatch(addTodo({ todo }))
   }
 
-  changeTodoName(todo: Todo) {
+  changeTodoName(todo: Todo): void {
     this.store.dispatch(changeTodoName({ todo }))
   }
 
-  changeTodoStatus(todo: Todo) {
+  changeTodoStatus(todo: Todo): void {
     this.store.dispatch(changeTodoStatus({ todo }))
   }
 
-  removeTodo(todo: Todo) {
+  removeTodo(todo: Todo): void {
     this.store.dispatch(removeTodo({ todo }))
   }
 }

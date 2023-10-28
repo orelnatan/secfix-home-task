@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 import { TODO_FEATURE_KEY, reducer } from './todo/todo.reducer';
 import { TodoEffects } from './todo/todo.effects';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [],
@@ -14,7 +14,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     StoreModule.forRoot(reducer),
     EffectsModule.forRoot(),
     StoreModule.forFeature(TODO_FEATURE_KEY, reducer),
-    EffectsModule.forFeature([TodoEffects]),
+    EffectsModule.forFeature([ TodoEffects ]),
     StoreDevtoolsModule.instrument({
       maxAge: 25, 
   }),

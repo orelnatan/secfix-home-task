@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+
 import { createFailureAction, createSuccessAction } from '../action-utils';
 import { Todo } from './todo.reducer'
 
@@ -16,15 +17,15 @@ export const addTodo = createAction(
 
 export const changeTodoName = createAction(
   '[ToDo] Change ToDo Name',
-  props<{ todo: Todo}>()
+  props<{ todo: Todo }>()
   );
 
 export const changeTodoStatus = createAction(
   '[ToDo] Change ToDo Status',
-  props<{ todo: Todo}>()
+  props<{ todo: Todo }>()
   );
 
 export const removeTodo = createAction(
   '[ToDo] Remove ToDo Item',
-  props<{ todo: Todo}>()
+  props<{ todo: Todo }>()
   );

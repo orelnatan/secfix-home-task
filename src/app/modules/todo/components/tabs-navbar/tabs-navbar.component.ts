@@ -7,10 +7,9 @@ import { EditTodoDialogComponent } from '../edit-todo-dialog';
 @Component({
   selector: 'tabs-navbar',
   templateUrl: './tabs-navbar.component.html',
-  styleUrls: ['./tabs-navbar.component.scss']
 })
 export class TabsNavbarComponent {
-  @Input() todosList: Todo[] = [];
+  @Input() todos: Todo[] = [];
 
   @Output() remove: EventEmitter<Todo> = new EventEmitter();
   @Output() status: EventEmitter<Todo> = new EventEmitter();
@@ -22,7 +21,7 @@ export class TabsNavbarComponent {
     public readonly dialog: MatDialog,
   ) { }
 
-  openEditDialog(todo: Todo) {
+  openEditDialog(todo: Todo): void { 
     this.dialog.open(EditTodoDialogComponent, { data: { todo } })
       .afterClosed()
       .subscribe((todo: Todo) => {

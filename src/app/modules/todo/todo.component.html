@@ -5,7 +5,7 @@
 
   <div class="tabs-navbar-container">
     <tabs-navbar 
-      [todosList]="(allTodos$ | async)!"
+      [todos]="(allTodos$ | async)!"
       (remove)="removeTodo($event)"
       (status)="changeTodoStatus($event)"
       (edit)="changeTodoName($event)">

@@ -21,7 +21,7 @@ export interface Todo {
   id: number;
   name: string;
   status: TodoStatus;
-  priority?: PriorityType
+  priority: PriorityType
 }
 
 export interface TodoState {

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { PriorityType, Todo } from 'src/app/modules/store/todo/todo.reducer';
+
+import { PriorityType, Todo } from '../../../../modules/store/todo/todo.reducer';
 
 @Component({
   selector: 'todo-form',
