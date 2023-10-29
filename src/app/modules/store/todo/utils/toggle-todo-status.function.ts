@@ -1,4 +1,4 @@
-import { Todo, TodoStatus } from "../todo.reducer";
+import { TodoStatus, Todo } from "../models";
 
 export function toggleTodoStatus(todos: Todo[], todo: Todo): Todo[] {
   return todos.map((element: Todo): Todo => {

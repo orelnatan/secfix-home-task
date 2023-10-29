@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { getTodos, addTodo, removeTodo, changeTodoStatus, changeTodoName } from '../store/todo/todo.actions';
 import { getAllTodos } from '../store/todo/todo.selectors';
-import { TodoStatus, Todo } from '../store/todo/todo.reducer';
+import { Todo, TodoStatus } from '../store/todo/models';
 
 @Component({
   selector: 'app-todo',

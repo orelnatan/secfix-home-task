@@ -3,9 +3,10 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
-import { PriorityType, Todo, TodoStatus } from "./todo.reducer"
+import { PriorityType, TodoStatus, Todo } from './models';
 
 import * as actions from './todo.actions';
+
 
 const todos: Todo[] = [
   {

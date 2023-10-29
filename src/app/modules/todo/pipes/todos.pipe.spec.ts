@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { TodosPipe } from './todos.pipe'; 
-import { PriorityType, Todo, TodoStatus } from '../../store/todo/todo.reducer';
+import { PriorityType, TodoStatus, Todo } from '../../store/todo/models';
 
 describe('TodosPipe', () => {
   let pipe: TodosPipe;

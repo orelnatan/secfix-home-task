@@ -1,4 +1,4 @@
-import { Todo } from "../todo.reducer";
+import { Todo } from "../models";
 
 export function changeTodoName(todos: Todo[], todo: Todo): Todo[] {
   return todos.map((element: Todo): Todo => {

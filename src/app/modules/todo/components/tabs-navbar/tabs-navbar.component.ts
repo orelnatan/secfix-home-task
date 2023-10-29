@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
-import { Todo, TodoStatus } from '../../../store/todo/todo.reducer';
 import { EditTodoDialogComponent } from '../edit-todo-dialog';
+import { Todo, TodoStatus } from '../../../../modules/store/todo/models';
 
 @Component({
   selector: 'tabs-navbar',

@@ -6,7 +6,7 @@ import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/materia
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { EditTodoDialogComponent } from './edit-todo-dialog.component';
-import { PriorityType, Todo, TodoStatus } from '../../../..//modules/store/todo/todo.reducer';
+import { PriorityType, TodoStatus, Todo } from '../../../../modules/store/todo/models';
 
 const TODO: Todo = {
   id: 1,

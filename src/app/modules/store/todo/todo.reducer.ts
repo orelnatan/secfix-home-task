@@ -1,28 +1,11 @@
 import { Action, createReducer, on } from '@ngrx/store';
 
 import { changeTodoName, toggleTodoStatus, generateNewTodo, removeTodo, sortByPriority } from './utils';
+import { Todo } from './models';
 
 import * as actions from './todo.actions';
 
 export const TODO_FEATURE_KEY = 'todo-store';
-
-export enum TodoStatus {
-  Complete = 'COMPLETE',
-  InProgress = 'IN_PROGRESS',
-}
-
-export enum PriorityType {
-  Low = 'LOW',
-  Medium = 'MEDIUM',
-  High = "HIGH"
-}
-
-export interface Todo {
-  id: number;
-  name: string;
-  status: TodoStatus;
-  priority: PriorityType
-}
 
 export interface TodoState {
     todoList: Todo[];

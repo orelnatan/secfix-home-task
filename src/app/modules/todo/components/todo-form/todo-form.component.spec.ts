@@ -6,7 +6,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { TodoFormComponent } from './todo-form.component';
-import { PriorityType, Todo } from '../../../../modules/store/todo/todo.reducer';
+import { PriorityType, Todo } from '../../../../modules/store/todo/models';
 
 describe('TodoFormComponent', () => {
   let component: TodoFormComponent;

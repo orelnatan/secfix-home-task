@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
-import { Todo } from 'src/app/modules/store/todo/todo.reducer';
+import { Todo } from '../../../../modules/store/todo/models';
 
 @Component({
   selector: 'app-edit-todo-dialog',

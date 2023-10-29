@@ -1,9 +1,9 @@
-import { PriorityType, Todo } from "../todo.reducer";
+import { PriorityType, Todo } from "../models";
 
 const PRIORITY_ORDER: Record<PriorityType, number> = {
-  "HIGH": 1,
-  "MEDIUM": 2,
-  "LOW": 3,
+  [PriorityType.High]: 1,
+  [PriorityType.Medium]: 2,
+  [PriorityType.Low]: 3,
 };
 
 export function sortByPriority(todos: Todo[]): Todo[] {

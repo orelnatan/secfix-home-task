@@ -9,7 +9,8 @@ import { of } from 'rxjs';
 import { TabsNavbarComponent } from './tabs-navbar.component';
 import { TodosPipe } from '../../pipes';
 import { TodoItemComponent } from '../todo-item';
-import { Todo, TodoStatus, PriorityType } from '../../../store/todo/todo.reducer';
+
+import { PriorityType, TodoStatus, Todo } from '../../../../modules/store/todo/models';
 
 const TODO: Todo = {
     id: 1,

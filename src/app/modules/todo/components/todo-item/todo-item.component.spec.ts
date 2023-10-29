@@ -2,7 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatIconModule } from '@angular/material/icon';
 
 import { TodoItemComponent } from './todo-item.component';
-import { PriorityType, Todo, TodoStatus } from '../../../store/todo/todo.reducer';
+
+import { PriorityType, TodoStatus, Todo } from '../../../../modules/store/todo/models';
 
 const TODO: Todo = { id: 1, name: 'Sample Todo', status: TodoStatus.InProgress, priority: PriorityType.Low };
 

@@ -15,11 +15,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
 
 import { addTodo, changeTodoName, changeTodoStatus, getTodos, removeTodo } from '../store/todo/todo.actions';
-import { Todo, TodoStatus, PriorityType } from '../store/todo/todo.reducer';
 import { TabsNavbarComponent, TodoFormComponent, TodoItemComponent } from './components';
 import { TodosPipe } from './pipes';
-
 import { TodoComponent } from './todo.component';
+import { PriorityType, TodoStatus, Todo } from '../store/todo/models';
 
 const TODOS: Todo[] = [
   {

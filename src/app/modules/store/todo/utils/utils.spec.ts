@@ -3,8 +3,9 @@ import { removeTodo } from "./remove-todo.function";
 import { sortByPriority } from "./sort-by-priority.function";
 import { toggleTodoStatus } from "./toggle-todo-status.function";
 
-import { Todo, TodoStatus, PriorityType } from "../todo.reducer";
 import { changeTodoName } from "./change-todo-name.function";
+
+import { PriorityType, TodoStatus, Todo } from "../models";
 
 const TODOS: Todo[] = [
   { id: 1, name: 'Todo 1', status: TodoStatus.Complete, priority: PriorityType.Low },

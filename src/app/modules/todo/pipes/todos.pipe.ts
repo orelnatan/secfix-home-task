@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-import { Todo, TodoStatus } from '../../store/todo/todo.reducer';
+import { Todo, TodoStatus } from '../../store/todo/models';
 
 @Pipe({
    name: 'todos',
